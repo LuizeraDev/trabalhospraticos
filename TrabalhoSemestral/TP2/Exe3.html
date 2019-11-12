@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exe 3 - TP2</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Sequência de Fibonacci</h1>
+<div class="container">
+<p>
+Exibir até o termo:<br>
+<input id="numero" type="number">
+</p>
+<p>
+<input type="submit" value="Testar" class="botao" onclick="fibonacci()">
+</p>
+<p class="resposta" id='resposta'></p>
+</div>
+<a class="redirecionar" href="../index.html"> Click aqui para voltar para o Menu.</a>
+</body>
+</html>
+<script>
+function fibonacci(){
+var termo = Number(document.all['numero'].value);
+var resposta = document.all['resposta'];
+var b = 0, a = 1;
+var aux; 
+
+termo = termo - 1;
+
+resposta.innerHTML = "Resposta: <br>";
+if(termo + 1 == 1)
+{
+    resposta.innerHTML += "0";
+}
+else{
+    resposta.innerHTML += "0 ";
+    for(var i = 0; i < termo; i++){
+        resposta.innerHTML += a + " ";
+        aux = a;
+        a = (a + b);
+        b = aux;
+    }
+    }   
+}
+</script>

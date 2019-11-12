@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exe 2 - TP2</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Verificar número primo</h1>
+<div class="container">
+<p>
+  Digite o número:
+ <input type="text" id="n1"/>
+</p>
+<input type="button" class="botao" id="verificarvalor" value="Verificar" onclick="primo()"/>
+<p id="r"></p>
+</div>
+ <a class="redirecionar" href="../index.html"> Click aqui para voltar para o Menu.</a>
+ </body>
+</html>
+<script>
+function primo() {
+var n1 = Number(document.all['n1'].value);
+var r = document.all['r'];
+var cont = 0;
+
+for (var i = n1; i > 0; i--) 
+{
+    if(n1 % i == 0)
+    {
+        cont++;
+    }
+}
+if (cont == 2)
+{
+    r.innerHTML = " O número " + n1 + " <b>é um número Primo</b>";
+}
+else{
+    r.innerHTML = "O número " + n1 + " <b>não é um número Primo</b>";
+  }
+}
+   </script>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="menu">
+        <h1>Menu</h1>
+        <p class="semi-titulo">Olá Villani, você é muito bem-vindo aqui. :)</p>
+        <hr>
+        <p class="semi-titulo">Trabalho Prático 1</p>
+        <p class="texto">
+        Exe 1 
+        <input type="radio" name="TP" value="1" id="Tp1Exe1"> |
+        Exe 2 
+        <input type="radio" name="TP" value="2" id="Tp1Exe2"> |
+        Exe 3 
+        <input type="radio" name="TP" value="3" id="Tp1Exe3"> |
+        Exe 4 
+        <input type="radio" name="TP" value="4" id="Tp1Exe4"> |
+        Exe 5 
+        <input type="radio" name="TP" value="5" id="Tp1Exe5">
+        </p>
+        <br>
+        <hr>
+        <p class="semi-titulo">Trabalho Prático 2</p>
+        <p class="texto">
+        Exe 1 
+        <input type="radio" name="TP" value="6" id="Tp2Exe1"> |
+        Exe 2 
+        <input type="radio" name="TP" value="7" id="Tp2Exe2"> |
+        Exe 3 
+        <input type="radio" name="TP" value="8" id="Tp2Exe3"> |
+        Exe 4 
+        <input type="radio" name="TP" value="9" id="Tp2Exe4"> |
+        Exe 5  
+        <input type="radio" name="TP" value="10" id="Tp2Exe5">
+        </p>
+        <br>
+        <hr>
+        <p class="semi-titulo">Trabalho Prático 3</p>
+        <p class="texto">
+        Exe 1 
+        <input type="radio" name="TP" value="11" id="Tp3Exe1"> |
+        Exe 2 
+        <input type="radio" name="TP" value="12" id="Tp3Exe2"> |
+        Exe 3 
+        <input type="radio" name="TP" value="13" id="Tp3Exe3"> |
+        Exe 4 
+        <input type="radio" name="TP" value="14" id="Tp3Exe4"> |
+        Exe 5
+        <input type="radio" name="TP" value="14" id="Tp3Exe5"> 
+        </p>
+        <p>
+            <input type="submit"  value="Redirecionar" class="button" onclick="Enviar()"> <br>
+            <input type="submit" style="margin-left:80%;height: 50px; padding:1%;" value="Autor" class="button" onclick="Autor()">
+        </p>
+        <p id="resposta"></p>
+    </div>
+</body>
+</html>
+<script>
+function Enviar(){
+    var TP = document.all['TP'];
+    var r = document.all['resposta'];
+
+    if(TP[0].checked)
+    {
+        window.location.href="TP1/Exe1.html";
+    }
+    if(TP[1].checked)
+    {
+        window.location.href="TP1/Exe2.html";
+    }
+    if(TP[2].checked)
+    {
+        window.location.href="TP1/Exe3.html";
+    }
+    if(TP[3].checked)
+    {
+        window.location.href="TP1/Exe4.html";
+    }
+    if(TP[4].checked)
+    {
+        window.location.href="TP1/Exe5.html";
+    }
+    if(TP[5].checked)
+    {
+        window.location.href="TP2/Exe1.html";
+    }
+    if(TP[6].checked)
+    {
+        window.location.href="TP2/Exe2.html";
+    }
+    if(TP[7].checked)
+    {
+        window.location.href="TP2/Exe3.html";
+    }
+    if(TP[8].checked)
+    {
+        window.location.href="TP2/Exe4.html";
+    }
+    if(TP[9].checked)
+    {
+        window.location.href="TP2/Exe5.html";
+    }
+    if(TP[10].checked)
+    {
+        window.location.href="TP3/Exe1.html";
+    }
+    if(TP[11].checked)
+    {
+        window.location.href="TP3/Exe2.html";
+    }
+    if(TP[12].checked)
+    {   
+        window.location.href="TP3/Exe3.html";
+    }
+    if(TP[13].checked)
+    {
+        window.location.href="TP3/Exe4.html";
+    }
+    if(TP[14].checked)
+    {
+        window.location.href="TP3/Exe5.html";
+    }
+}
+
+function Autor(){
+    alert("Autor: Luiz Guilherme dos Santos Gomes\nHabilitação: Técnico em Desenvolvimento de Sistemas\nSão Vicente / SP");
+}
+</script>

@@ -1,0 +1,102 @@
+body{
+    background-color: rgb(252, 238, 212);
+}
+
+.container{ 
+    background-color: rgb(99, 26, 26);
+    border: 3px solid;
+    padding: 1% 2%;
+    border-color: black;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+    height: 100%; 
+    width: 10%;
+    align-content:auto;
+    color:white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.menu{
+    background-color: rgb(99, 26, 26);
+    border: 3px solid;
+    padding: 1% 2%;
+    border-color: black;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+    height: 100%; 
+    width: 30%;
+    align-content:auto;
+    color:white;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 3%;
+}
+
+.semi-titulo{
+    font-size:30px;
+    font-weight: 600;
+}
+
+h1{
+    text-align:center;
+    color: white;
+    text-shadow: 1px 2px 2px black;
+}
+
+.botao{
+    background-color: rgb(90, 42, 42);
+    color:white;
+    padding: 10%;
+    outline: none;
+    border-radius: 50%;
+}
+
+.botao:hover{
+    background-color: rgb(151, 34, 34);
+}
+
+input{
+    text-align: center;
+    border-radius: 10px;
+    outline: none;
+    border-color: rgb(119, 56, 56);
+}
+
+.resposta{
+    font-weight: 700;
+}
+
+.button{
+    background-color: rgb(90, 42, 42);
+    color:white;
+    font-size:25px;
+    padding: 3%;
+    outline: none;
+    border-radius: 30px;
+}
+
+.button:hover{
+    background-color: rgb(160, 52, 52);
+}
+
+.texto{
+    font-size: 25px;
+    color:white;
+    font-weight: 700;
+    text-shadow: 4px 2px 3px black;
+}
+
+.redirecionar{
+    text-decoration: none;
+    color:black;
+    font-weight: 700;
+    text-shadow: 4px 2px 3px rgb(207, 120, 120);
+    font-size: 20px;
+    text-align:center;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+}

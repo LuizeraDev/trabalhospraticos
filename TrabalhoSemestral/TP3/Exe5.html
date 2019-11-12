@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exe 5 - TP4</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Vetor</h1>
+<div class="container">
+    <p>
+        Digite os números do vetor: <br>
+        <input type="number" id="vetor">
+    </p>
+    <p>
+        <input type="submit" value="Testar" onclick="vetor()" class="botao">
+    </p>
+    <p id="resposta" class="resposta"></p>
+</div>
+<a class="redirecionar" href="../index.html"> Click aqui para voltar para o Menu.</a>
+</body>
+</html>
+<script>
+var inteiros = [];
+function vetor(){
+    r = document.all['resposta'];
+    var inteiro = Number(document.all['vetor'].value);
+    inteiros.push(inteiro);
+
+    if(inteiro ==0)
+    {
+        for (var i = 0; i < inteiros.length; i++) 
+        {
+        var troca = inteiros[i]
+        inteiros[i] = inteiros[i + 1]
+        inteiros[i + 1] = troca;
+        }
+    }
+    else
+    {
+     for (var i = 0; i < inteiros.length; i++) 
+     {
+
+     }
+    }
+   r.innerHTML = "Números iguais ao último: " + inteiros.join(', ') + "<br>";
+}
+</script>

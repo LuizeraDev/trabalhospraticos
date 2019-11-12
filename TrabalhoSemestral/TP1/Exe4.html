@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exe 4 - TP1</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Exe 4 - Data cronologicamente maior</h1>
+    <div class="container">
+        <p class="resposta">Primeira data:</p>
+        <p>
+            Digite o Dia: 
+            <input type="number" id="dia1">
+        </p>
+        <p>
+            Digite o Mês: 
+            <input type="number" id="mes1">
+        </p>
+        <p>
+            Digite o Ano: 
+            <input type="number" id="ano1">
+        </p>
+        <p class="resposta">Segunda data:</p>
+        <p>
+            Digite o Dia: 
+            <input type="number" id="dia2">
+        </p>
+        <p>
+            Digite o Mês: 
+            <input type="number" id="mes2">
+        </p>
+        <p>
+            Digite o Ano: 
+            <input type="number" id="ano2">
+        </p>
+        <p>
+            <input type="submit" value="Testar" class="botao" onclick="calcular()">
+        </p>
+        <p id="resposta"></p>
+    </div>
+    <a class="redirecionar" href="../index.html"> Click aqui para voltar para o Menu.</a>
+</body>
+</html>
+<script>
+function calcular(){
+    var dia1 = Number(document.all['dia1'].value); 
+    var mes1 = Number(document.all['mes1'].value); 
+    var ano1 = Number(document.all['ano1'].value); 
+    var resposta = document.all['resposta'];
+    var dia2 = Number(document.all['dia2'].value);
+    var mes2 = Number(document.all['mes2'].value);
+    var ano2 = Number(document.all['ano2'].value);
+
+    if(dia1 > 31 || dia2 > 31 && mes1 > 12|| mes2 > 12 || mes1 < 1 || mes2 < 1 && ano1 < 0 || ano2 > 0)
+    {
+        resposta.innerHTML = "<p class='resposta'>Resposta: <br> Alguns dos dados acima não passaram pela nossa validação.</p>";
+    }
+    if(ano1 < ano2){
+        resposta.innerHTML = "<p class='resposta'>Resposta: <br> A 1° data é cronologicamete maior</p>";
+    }
+    else{
+        resposta.innerHTML = "<p class='resposta'>Resposta: <br> A 2° data é cronologicamete maior</p>";
+    }
+
+    if(ano1 == ano2){
+        if (mes1 < mes2)
+        {
+            resposta.innerHTML = "<p class='resposta'>Resposta: <br> A 1° data é cronologicamete maior</p>";
+        }
+        else
+        {
+            resposta.innerHTML = "<p class='resposta'>Resposta: <br> A 2° data é cronologicamete maior</p>";
+        }
+
+        if(mes1 == mes2)
+        {
+            if(dia1 < dia2)
+            {
+                resposta.innerHTML = "<p class='resposta'>Resposta: <br> A 1° data é cronologicamete maior</p>";
+            }
+            else
+            {
+                resposta.innerHTML = "A 2° data é cronologicamete maior</p>";
+            }
+        }
+    }
+}
+</script>

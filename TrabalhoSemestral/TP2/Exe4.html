@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exe 4 - TP2</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Estoque de Vinho</h1>
+<div class="container">
+<p>Digite o número e deposite o vinho: 1 - Tinto, 2 - Branco, 3 - Rosê.</p>
+<p>
+    Digite o vinho que você deseja a: <br>
+    <input type="number" id="vinho">
+</p>
+<p>
+    <input type="submit" value="Testar" onclick="vinho()" class="botao">
+</p>
+<p id="resposta" class="resposta"></p>
+</div>
+<a class="redirecionar" href="../index.html"> Click aqui para voltar para o Menu.</a>
+</body>
+</html>
+<script>
+var contador = 0; 
+var tinto = 0, rose = 0, branco = 0;
+function vinho(){
+if(contador < 50){
+var vinho = Number(document.all['vinho'].value);
+var r = document.all['resposta'];
+var final;
+switch(vinho)
+{
+    case 1:
+    {
+        tinto++;
+        contador++;
+    }
+    break;
+    case 2:
+    {
+        rose++;
+        contador++;
+    }
+    break;
+    case 3:
+    {
+        branco++;
+        contador++;
+    }
+    break;
+}
+r.innerHTML = "Vinhos depositados: " + contador; 
+if(contador == 50)
+{
+    tinto = (tinto / 50) * 100;
+    rose = (rose / 50) * 100;
+    branco = (branco / 50) * 100;
+
+    r.innerHTML = "Porcentagem de vinho tinto: " +tinto + "%<br>"; 
+    r.innerHTML += "Porcentagem de vinho rose: " + rose + "%<br>"; 
+    r.innerHTML += "Porcentagem de vinho branco: " + branco + "%"; 
+}
+}
+else
+{
+    alert("Você já chegou no limite do depósito!");
+}
+}
+</script>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exe 2 - TP1</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Exe 2 - Media das três notas</h1>
+<div class="container">
+    <p class="resposta">
+        Obs: <br> Trabalho prático <br> (peso 2), <br>Avaliação semestral(peso 3), Exame final(peso 5). 
+    </p>
+    <p>
+        Digite a primeira nota: <br>
+        <input type="number" id="nota1">
+    </p>
+    <p>
+        Digite a segunda nota: <br>
+        <input type="number" id="nota2">
+    </p>
+    <p>
+        Digite a terceira nota: <br>
+        <input type="number" id="nota3">
+    </p>
+    <p>
+        <input type="submit" value="Testar" class="botao" onclick="resultado()">
+    </p>
+    <p id="resposta"></p>
+</div>
+<a class="redirecionar" href="../index.html"> Click aqui para voltar para o Menu.</a>
+</body>
+</html>
+<script> 
+function resultado(){
+    var nota1 = Number(document.all['nota1'].value);
+    var nota2 = Number(document.all['nota2'].value);
+    var nota3 = Number(document.all['nota3'].value);
+    var resposta = document.all['resposta'];
+
+    var mediaPonderada = ((nota1 * 2) + (nota2 * 3) + (nota3 * 5)) / 10;
+
+    if(nota1 > 10 || nota1 < 0 || nota2 > 10 || nota2 < 0  || nota3 > 10 || nota3 < 0 ){
+        resposta.innerHTML = "<p class='resposta'>Resposta: <br>Uma das notas foi digitada incorretamente, lembre-se as notas devem ser de 0 até 10</p>";
+    }
+
+    else{
+
+    if(mediaPonderada >= 8 && mediaPonderada <= 10)
+    {
+        resposta.innerHTML = "<p class='resposta'>Resposta: <br>CONCEITO A</p>";
+    }
+    else if(mediaPonderada >= 7 && mediaPonderada <= 7.9)
+    {
+        resposta.innerHTML = "<p class='resposta'>Resposta: <br>CONCEITO B</p>";
+    }
+    else if(mediaPonderada >= 6 && mediaPonderada <= 6.9)
+    {
+        resposta.innerHTML = "<p class='resposta'>Resposta: <br>CONCEITO C</p>";
+    }
+    else if(mediaPonderada >= 5 && mediaPonderada <= 5.9)
+    {
+        resposta.innerHTML = "<p class='resposta'>Resposta: <br>CONCEITO D</p>";
+    }
+    else{
+        resposta.innerHTML = "<p class='resposta'>Resposta: <br>CONCEITO E</p>";
+    }  
+
+  } 
+}
+</script>

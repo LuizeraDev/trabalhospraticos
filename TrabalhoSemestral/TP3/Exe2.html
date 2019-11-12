@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exe 2 - TP3</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+<h1>Vetor</h1>
+<div class="container">
+    <p>
+        Digite os números do vetor: <br>
+        <input type="number" id="vetor">
+    </p>
+    <p>
+        <input type="submit" value="Testar" onclick="calc()" class="botao">
+    </p>
+    <p id="resposta1" class="resposta"></p>
+    <p id="resposta" class="resposta"></p>
+</div>
+<a class="redirecionar" href="../index.html"> Click aqui para voltar para o Menu.</a>
+</body>
+
+</html>
+<script>
+var vetor = [];
+var contador = 0;
+var cont = 0;
+function calc() {
+    if (contador < 8) {
+        var inteiro = Number(document.all['vetor'].value);
+        var r = document.all['resposta'];
+        var r1 = document.all['resposta1'];
+        vetor.push(inteiro);
+
+        contador++;
+        r1.innerHTML = "Números preenchidos no vetor: " + contador;
+
+        if (contador == 8) {
+            r1.innerHTML = "";
+            for (var i = 0; i < 8; i++) {
+                if (vetor[i] > 50) {
+                    r.innerHTML += "Números maiores que 50: " + vetor[i] + " Posição: " + i + "<br>";
+                    cont++;
+                }
+            }
+            if (cont == 0) {
+                r.innerHTML = "Nenhum número foi maior do que 50";
+            }
+        }
+    }
+    else 
+    {
+        alert("Limite atingido.");
+    }
+}
+</script>

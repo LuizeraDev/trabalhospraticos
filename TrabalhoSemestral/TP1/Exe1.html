@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Exe 1 - TP1</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<style>
+table, td{
+    border: 4px solid black;
+    border-color: rgb(124, 37, 25);
+    text-align:center;
+	margin:auto;
+	border-radius:80px;
+}	
+</style>
+<h1><b>Exe 1 Cálculo Bháskara - Gerar Equação 2 grau</b></h1>
+<div class="container">
+<table style="border: 2px;" class="tabela">
+	
+	<tr>
+		<td><b><i>Dado</i></b></td>
+		<td><b><i>Resultado</i></b></td>
+	</tr>
+	<tr>
+		<td><b>Delta</b></td>
+		<td id="delta"></td>
+	</tr>
+	<tr>
+		<td><b>X1</b></td>
+		<td id="x1"></td>
+	</tr>
+	<tr>
+		<td><b>X2</b></td>
+		<td id="x2"></td>
+	</tr>
+
+</table>
+
+<br>
+
+<input type="button" value="Testar" class="botao" onclick="calcularBaskara()">
+<br>
+</div>
+<a class="redirecionar" href="../index.html"> Click aqui para voltar para o Menu.</a>
+</body>
+</html>
+<script>
+function calcularBaskara(){	
+		var a = prompt('Digite a');
+		var b = prompt('Digite b');
+		var c = prompt('Digite c');
+
+	a = Number(a);
+	b = Number(b);
+	c = Number(c);
+
+		var delta = (b*b)-4*a*c;
+
+	if (delta>0) {
+		var x1 = ((b * - 1)+ Math.sqrt(delta))/(2*a);
+		var x2 = ((b * - 1) - Math.sqrt(delta))/(2*a);
+
+	x1 = Number(x1);
+	x2 = Number(x2);
+
+		document.all['delta'].innerHTML = delta;
+		document.all['x1'].innerHTML = x1;
+		document.all['x2'].innerHTML = x2;
+
+	}
+
+	else if(delta == 0 ){
+		var x1 = ((b * -1)  + Math.sqrt(0))/(2*a);
+
+		document.all['delta'].innerHTML = "Não Tem valor";
+		document.all['x1'].innerHTML = x1;
+		document.all['x2'].innerHTML = "Não Tem valor";
+	}
+
+	else{
+		alert('Delta negativo, não possui raiz.');
+	}
+}
+</script>

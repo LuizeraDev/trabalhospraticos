@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exe 1 - TP2</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Exe 1 - Salário de 25 funcionários</h1>
+    <div class="container">
+        <p id="informacao"></p>
+        <p id="resposta"></p>
+    </div>
+    <a class="redirecionar" href="../index.html"> Click aqui para voltar para o Menu.</a>
+</body>
+</html>
+<script>
+var informacao = document.all['informacao'];
+var r = document.all['resposta'];
+var i = 1;
+
+informacao.innerHTML = "<p>Digite o salário do "+i+"° funcionário <br> <input type='number' id='salario'></p><p><input type='submit' value='Testar' class='botao' onclick='calcular()'>";
+
+function calcular()
+{
+    var salario = Number(document.all['salario'].value);
+    if(salario <= 500)
+    {
+        r.innerHTML = "<p class='resposta'>Seu salário teve uma bonificação de 5%: R$" + (salario * 1.05) + "</p>";
+        salario = salario * 1.05; 
+    }
+    else if(salario >= 501 && salario <= 1200)
+    {
+        r.innerHTML = "<p class='resposta'>Seu salário teve uma bonificação de 12%: R$" + (salario * 1.12) + "</p>";
+        salario = salario * 1.12;
+    }
+    else 
+    {
+        r.innerHTML = "<p class='resposta'>Seu salário não teve uma bonificação.</p>";
+    }
+    if(salario <= 600)
+    {
+        r.innerHTML += "<p class='resposta'>Você recebeu um auxílio-escola de 150 reais totalizando: R$" + (salario + 150);  
+    }
+    else if(salario > 600)
+    {
+        r.innerHTML += "<p class='resposta'>Você recebeu um auxílio-escola de 100 reais totalizando: R$" + (salario + 100); 
+    }
+    r.innerHTML += "<input type='submit' class='botao' id='proximo' value='Próximo' onclick='next()'>"
+}
+function next(){
+    i = i + 1;
+    r.innerHTML ="";
+    informacao.innerHTML = "<p>Digite o salário do "+ i +"° funcionário <br> <input type='number' id='salario'></p><p><input type='submit' value='Testar' class='botao' onclick='calcular()'>";
+    if(i >= 26)
+    {
+        informacao.innerHTML = "<p>Número máximo de funcionários atingido</p>"
+    }
+}
+</script>

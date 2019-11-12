@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exe 5 - TP2</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Fatorial de um número</h1>
+<div class="container">
+<p> 
+    Digite o número no qual deseja fatorar:<br>
+    <input type="number" id="n1">
+</p>
+<p>
+    <input type="submit" value="testar" class="botao" onclick="fatorial()">
+</p>
+<p id="resposta"></p>
+</div>
+<a class="redirecionar" href="../index.html"> Click aqui para voltar para o Menu.</a>
+</body>
+</html>
+<script>
+function fatorial(){
+valor = Number(document.all['n1'].value);
+resposta = document.all['resposta'];
+resposta.innerHTML = "<p class='resposta'>Resposta:";
+
+    if(valor < 0) 
+    {
+    resposta.innerHTML = "Valor deve ser maior ou igual a zero";
+    } 
+    else if ((valor == 0) || (valor == 1)) 
+    {
+        resposta.innerHTML += "1"; 
+    } 
+    else 
+    {
+    var acumula = 1;
+    for(var x = valor; x > 1; x--) {
+        acumula = acumula * x;
+    }
+    resposta.innerHTML += acumula;
+    } 
+}
+</script>

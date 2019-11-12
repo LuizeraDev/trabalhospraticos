@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exe 5 - TP1</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Exe 5 - Menu</h1>
+    <div class="container">
+    <p>
+        Menu de opções digite o número da função desejada: <br>
+        1. Somar dois números; <br>
+        2. Raiz quadrada de um número;
+    </p>
+    <p>
+        <input type="number" id="escolha">
+    </p>
+    <p>
+        <input type="submit" value="Testar" onclick="calcular()" class="botao">
+    </p>
+    <p id="resposta1"></p>
+    <p id="resposta2"></p>
+    </div>
+    <a class="redirecionar" ="center" href="../index.html"> Click aqui para voltar para o Menu.</a>
+</body>
+</html>
+<script>
+function calcular(){
+    var escolha = Number(document.all['escolha'].value);
+    var resposta = document.all['resposta1'];
+    var resposta2 = document.all['resposta2'];
+
+    switch (escolha)
+    {
+        case 1:
+        {
+            resposta.innerHTML = "<p>Digite o 1° número: <input type='number' id='n1'></p><p>Digite o 2°número:<input type='number' id='n2'></p><p><input type='submit' value='Testar' class='botao' onclick='calcular1()'</p>";
+            resposta2.innerHTML = "";
+        }
+        break;
+        case 2:
+        {
+            resposta.innerHTML = "<p>Digite o número: <input type='number' id='numero'></p><p><input type='submit' value='Testar' class='botao' onclick='calcular2()'</p>";
+            resposta2.innerHTML = "";
+        }
+        break;
+    }
+
+}
+
+function calcular1(){
+    var n1 = Number(document.all['n1'].value);
+    var n2 = Number(document.all['n2'].value);
+    resposta2.innerHTML = "<p class='resposta'>A soma dos números é: " + (n1 + n2) + "</p>";
+}
+
+function calcular2(){
+    var numero = Number(document.all['numero'].value);
+    resposta2.innerHTML = "<p class='resposta'>A raiz quadrada do número é: " + Math.sqrt(numero) + "</p>";
+}
+
+</script>

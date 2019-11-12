@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exe 4 - TP3</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Vetor</h1>
+<div class="container">
+    <p>
+        Digite os números do vetor: <br>
+        <input type="number" id="vetor">
+    </p>
+    <p>
+        <input type="submit" value="Testar" onclick="ordenaVetor()" class="botao">
+    </p>
+    <p id="resposta" class="resposta"></p>
+</div>
+<a class="redirecionar" href="../index.html"> Click aqui para voltar para o Menu.</a>
+</body>
+</html>
+<script>
+var contador = 0;
+var inteiros = [];
+function ordenaVetor(){
+if(contador < 20)
+{
+    r = document.all['resposta'];
+    var inteiro = Number(document.all['vetor'].value);
+    inteiros.push(inteiro);
+
+    contador++;
+
+    for(var j = inteiros.length - 1; j > 0; j--)
+    {
+        for(var i = 0; i < j; i++)
+        {
+            if(inteiros[i] < inteiros[i + 1]){
+                var troca = inteiros[i]
+                inteiros[i] = inteiros[i + 1]
+                inteiros[i + 1] = troca;
+            }
+        }
+    }
+   r.innerHTML = "Vetor Ordenado: " + inteiros.join(', ') + "<br>";
+}
+else{
+    alert("Limite atingido.");
+}
+}
+</script>

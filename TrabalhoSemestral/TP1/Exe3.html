@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exe 3 - TP1</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Exe 3 - Ordenação de 3 números em ordem crescente</h1>
+    <div class="container">
+        <p>
+            Digite o primeiro número: <br>
+            <input type="number" id="n1">
+        </p>
+        <p>
+            Digite o segundo número: <br>
+            <input type="number" id="n2">
+        </p>
+        <p>
+            Digite o terceiro número: <br>
+            <input type="number" id="n3">
+        </p> 
+        <p>
+            <input type="submit" value="Testar" class="botao" onclick="calcular()">
+        </p>
+        <p id="resposta"></p>
+    </div>
+    <a class="redirecionar" href="../index.html"> Click aqui para voltar para o Menu.</a>
+</body>
+</html>
+<script>
+function calcular(){
+var n1 = Number(document.all['n1'].value);
+var n2 = Number(document.all['n2'].value);
+var n3 = Number(document.all['n3'].value);
+var resposta = document.all['resposta'];
+
+
+    if(n1 > n2 && n1 > n3)
+    {
+        if(n2 > n3)
+        {
+            resposta.innerHTML = "<p class='resposta'> Resposta: "+ n1 +", " + n2 + ", " + n3 + "</p>";
+        }
+        else
+        {
+            resposta.innerHTML = "<p class='resposta'> Resposta: "+ n1 +", " + n3 + ", " + n2 + "</p>";
+        }
+    }
+
+    else if(n2 > n1 && n2 > n3)
+    {
+        if(n1 > n3)
+        {
+            resposta.innerHTML = "<p class='resposta'> Resposta: "+ n2 +", " + n1 + ", " + n3 + "</p>";
+        }
+        else{
+            resposta.innerHTML = "<p class='resposta'> Resposta: "+ n2 +", " + n3 + ", " + n1 + "</p>";
+        }
+    }
+
+    else
+    {
+        if(n2 > n1)
+        {
+            resposta.innerHTML = "<p class='resposta'> Resposta: "+ n3 +", " + n2 + ", " + n1 + "</p>";
+        }
+        else{
+            resposta.innerHTML = "<p class='resposta'> Resposta: "+ n3 +", " + n1 + ", " + n2 + "</p>";
+        }
+    }
+}
+</script>

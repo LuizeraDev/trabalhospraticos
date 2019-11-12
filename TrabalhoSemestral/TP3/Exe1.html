@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exe 1 - TP3</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+<h1>Vetor</h1>
+<div class="container">
+    <p>
+        Digite os números do vetor: <br>
+        <input type="number" id="vetor">
+    </p>
+    <p>
+        <input type="submit" value="Testar" onclick="vetor()" class="botao">
+    </p>
+    <p id="resposta" class="resposta"></p>
+</div>
+<a class="redirecionar" href="../index.html"> Click aqui para voltar para o Menu.</a>
+</body>
+
+</html>
+<script>
+    var pegadados = [];
+    var positivos = [];
+    var negativos = [];
+    var contador = 0;
+
+function vetor() {
+    if (contador < 8) {
+        var inteiro = Number(document.all['vetor'].value);
+        var r = document.all['resposta'];
+        pegadados.push(inteiro);
+
+        contador++;
+        r.innerHTML = "Números no vetor: " + contador;
+
+        if (contador == 8) {
+            for (var i = 0; i < 8; i++) {
+                if (pegadados[i] > 0) {
+                    positivos.push(pegadados[i]);
+                }
+                else if (pegadados[i] < 0) {
+                    negativos.push(pegadados[i]);
+                }
+            }
+            r.innerHTML = 'Vetor: ' + pegadados.join(', ') + "<br>";
+            r.innerHTML += 'Positivos: ' + positivos.join(', ') + "<br>";
+            r.innerHTML += 'Negativos: ' + negativos.join(', ') + "<br>";
+        }
+    }
+    else
+    {
+        alert("Limite atingido.");
+    }
+}
+</script>

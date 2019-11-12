@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exe 3 - TP3</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+<h1>Vetor</h1>
+<div class="container">
+    <p>
+        Digite os números do vetor: <br>
+        <input type="number" id="vetor">
+    </p>
+    <p>
+        <input type="submit" value="Testar" onclick="calc()" class="botao">
+    </p>
+    <p id="resposta" class="resposta"></p>
+</div>
+<a class="redirecionar" href="../index.html"> Click aqui para voltar para o Menu.</a>
+</body>
+</html>
+<script>
+var vetor = [];
+vetor2 = [];
+var contador = 0;
+var cont = 0;
+function calc() {
+if(contador < 10)
+{
+    r = document.all['resposta'];
+    var inteiro = Number(document.all['vetor'].value);
+    vetor.push(inteiro);
+
+    contador++;
+
+    r.innerHTML = "Números preenchidos no vetor: " + contador;
+    
+    if (contador == 10) 
+    {
+            r.innerHTML = "";
+            for (var i = 0; i < 10; i++) {
+                if (vetor[i] % 2) {
+                   vetor2.push(vetor[i] * 5) ;
+                }
+                else{
+                   vetor2.push(vetor[i] + 5);
+                }
+            }
+            r.innerHTML = "Vetor Alterado: " + vetor2.join(', ') + "<br>"
+    }
+}
+else
+{
+    alert("Limite atingido.");
+}
+}
+</script>
