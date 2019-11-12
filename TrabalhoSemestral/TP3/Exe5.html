@@ -23,28 +23,57 @@
 </body>
 </html>
 <script>
-var inteiros = [];
-function vetor(){
-    r = document.all['resposta'];
-    var inteiro = Number(document.all['vetor'].value);
-    inteiros.push(inteiro);
+/* 
+5-) Entrar com vários números no vetor de tamanho máximo de 100 elementos, até digitar o número “0”. 
+Imprimir quantos números iguais ao último número foram lidos. O limite de números é 100.
+*/
+var pegadados = [];
+var contador = 0;
+var cont = 0;
+var j = [];
 
-    if(inteiro ==0)
+function vetor(){
+var inteiro = Number(document.all['vetor'].value);
+var r = document.all['resposta'];
+pegadados.push(inteiro);
+contador++;
+
+r.innerHTML = "Números no vetor: " + contador;
+
+ if (inteiro == 0 || contador == 100) 
+ {
+    //Se o inteiro for parado por 0
+    if(inteiro == 0)
     {
-        for (var i = 0; i < inteiros.length; i++) 
-        {
-        var troca = inteiros[i]
-        inteiros[i] = inteiros[i + 1]
-        inteiros[i + 1] = troca;
+    for (var i = 0; i < pegadados.length - 1; i++) 
+    {
+            var ultimo = pegadados[pegadados.length - 2];
+            r.innerHTML = "O seu último número era: "+ ultimo + "<br>";
+            if(ultimo == pegadados[i])
+            {
+              cont++;
+              r.innerHTML+= "<br> Foram lidos: " + cont + " números iguais ao último número descartando o 0.";
+            }
         }
     }
-    else
+    //Se o inteiro chegar até 100
+    if(contador == 100)
     {
-     for (var i = 0; i < inteiros.length; i++) 
-     {
-
-     }
+       for (var i = 0; i < pegadados.length; i++) 
+       {
+        var ultimo = pegadados[pegadados.length - 1];
+        r.innerHTML = "O seu último número era: "+ ultimo + "<br>";
+        if(ultimo == pegadados[i])
+        {
+            cont++;
+            r.innerHTML+= "<br> Foram lidos: " + cont + " números iguais ao último número.";
+        }
+       }
     }
-   r.innerHTML = "Números iguais ao último: " + inteiros.join(', ') + "<br>";
+  }
+  else if(contador > 100)
+  {
+    r.innerHTML = "O número máximo foi atingido.";
+  }
 }
 </script>
