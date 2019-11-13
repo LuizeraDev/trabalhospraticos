@@ -20,8 +20,6 @@
     <p id="resposta" class="resposta"></p>
 </div>
 <a class="redirecionar" href="../index.html"> Click aqui para voltar para o Menu.</a>
-</body>
-</html>
 <script>
 /* 
 5-) Entrar com vários números no vetor de tamanho máximo de 100 elementos, até digitar o número “0”. 
@@ -40,8 +38,8 @@ contador++;
 
 r.innerHTML = "Números no vetor: " + contador;
 
- if (inteiro == 0 || contador == 100) 
- {
+  if (inteiro == 0 || contador == 100) 
+  {
     //Se o inteiro for parado por 0
     if(inteiro == 0)
     {
@@ -59,8 +57,8 @@ r.innerHTML = "Números no vetor: " + contador;
     //Se o inteiro chegar até 100
     if(contador == 100)
     {
-       for (var i = 0; i < pegadados.length; i++) 
-       {
+        for (var i = 0; i < pegadados.length; i++) 
+        {
         var ultimo = pegadados[pegadados.length - 1];
         r.innerHTML = "O seu último número era: "+ ultimo + "<br>";
         if(ultimo == pegadados[i])
@@ -68,7 +66,7 @@ r.innerHTML = "Números no vetor: " + contador;
             cont++;
             r.innerHTML+= "<br> Foram lidos: " + cont + " números iguais ao último número.";
         }
-       }
+        }
     }
   }
   else if(contador > 100)
@@ -77,3 +75,5 @@ r.innerHTML = "Números no vetor: " + contador;
   }
 }
 </script>
+</body>
+</html>

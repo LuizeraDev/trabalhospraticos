@@ -12,7 +12,7 @@
 <body>
     <div class="menu">
         <h1>Menu</h1>
-        <p class="semi-titulo">Olá Villani, você é muito bem-vindo aqui. :)</p>
+        <p class="semi-titulo">Olá Villani, você é muito <br> bem-vindo aqui :)</p>
         <hr>
         <p class="semi-titulo">Trabalho Prático 1</p>
         <p class="texto">
@@ -59,12 +59,11 @@
         </p>
         <p>
             <input type="submit"  value="Redirecionar" class="button" onclick="Enviar()"> <br>
-            <input type="submit" style="margin-left:80%;height: 50px; padding:1%;" value="Autor" class="button" onclick="Autor()">
+            <a href="https://github.com/luizera-36/trabalhospraticos" target="_blank" style="display: inline-block; margin-right:25%;font-size:30px; color:white; font-weight: 700;">GitHub</a>
+            <input type="submit" style="display: inline-block; margin-left:25%;height: 50px; padding:1%;" value="Autor" class="button" onclick="Autor()">
         </p>
         <p id="resposta"></p>
     </div>
-</body>
-</html>
 <script>
 function Enviar(){
     var TP = document.all['TP'];
@@ -136,3 +135,5 @@ function Autor(){
     alert("Autor: Luiz Guilherme dos Santos Gomes\nHabilitação: Técnico em Desenvolvimento de Sistemas\nSão Vicente / SP");
 }
 </script>
+</body>
+</html>

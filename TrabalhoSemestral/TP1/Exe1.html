@@ -6,22 +6,12 @@
 	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<style>
-table, td{
-    border: 4px solid black;
-    border-color: rgb(124, 37, 25);
-    text-align:center;
-	margin:auto;
-	border-radius:80px;
-}	
-</style>
 <h1><b>Exe 1 Cálculo Bháskara - Gerar Equação 2 grau</b></h1>
 <div class="container">
-<table style="border: 2px;" class="tabela">
-	
+<table style="display: block; margin: auto; border:4px; border-style: dashed;border-color: white; border-radius: 20px; text-align:center;">
 	<tr>
-		<td><b><i>Dado</i></b></td>
-		<td><b><i>Resultado</i></b></td>
+		<td style="border: 2px; border-style: solid; border-color:white;border-radius: 20px;"><b><i>Dado</i></b></td>
+		<td style="border: 2px; border-style: solid; border-color:white;border-radius: 20px;"><b><i>Resultado</i></b></td>
 	</tr>
 	<tr>
 		<td><b>Delta</b></td>
@@ -44,13 +34,11 @@ table, td{
 <br>
 </div>
 <a class="redirecionar" href="../index.html"> Click aqui para voltar para o Menu.</a>
-</body>
-</html>
 <script>
 function calcularBaskara(){	
-		var a = prompt('Digite a');
-		var b = prompt('Digite b');
-		var c = prompt('Digite c');
+	var a = prompt('Digite a');
+	var b = prompt('Digite b');
+	var c = prompt('Digite c');
 
 	a = Number(a);
 	b = Number(b);
@@ -84,3 +72,5 @@ function calcularBaskara(){
 	}
 }
 </script>
+</body>
+</html>
