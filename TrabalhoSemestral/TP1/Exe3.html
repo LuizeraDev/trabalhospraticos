@@ -36,9 +36,9 @@ var n3 = Number(document.all['n3'].value);
 var resposta = document.all['resposta'];
 
 
-    if(n1 > n2 && n1 > n3)
+    if(n1 < n2 && n1 < n3)
     {
-        if(n2 > n3)
+        if(n2 < n3)
         {
             resposta.innerHTML = "<p class='resposta'> Resposta: "+ n1 +", " + n2 + ", " + n3 + "</p>";
         }
@@ -48,9 +48,9 @@ var resposta = document.all['resposta'];
         }
     }
 
-    else if(n2 > n1 && n2 > n3)
+    else if(n2 < n1 && n2 < n3)
     {
-        if(n1 > n3)
+        if(n1 < n3)
         {
             resposta.innerHTML = "<p class='resposta'> Resposta: "+ n2 +", " + n1 + ", " + n3 + "</p>";
         }
@@ -61,7 +61,7 @@ var resposta = document.all['resposta'];
 
     else
     {
-        if(n2 > n1)
+        if(n2 < n1)
         {
             resposta.innerHTML = "<p class='resposta'> Resposta: "+ n3 +", " + n2 + ", " + n1 + "</p>";
         }
